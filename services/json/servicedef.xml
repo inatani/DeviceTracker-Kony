@@ -1,0 +1,191 @@
+<application desc="" id="DeviceTracker" name="" smscode="">
+   <app-config>
+      <config-param name="APP_SMS_HEADER" value="null"/>
+   </app-config>
+   <services>
+      <service cachable="false" cacheduration="" id="listDevices" passwordencrypted="true" smscode="" smsenabled="false" type="jsonConnector">
+         <service-config>
+            <config-param name="endpointUrl" value="http://localhost:3000/listdevices"/>
+            <config-param name="postprocessorname" value=""/>
+            <config-param name="preprocessorname" value=""/>
+            <config-param name="urlprovider" value=""/>
+            <config-param name="dataprovider" value=""/>
+            <config-param name="sockettimeout" value=""/>
+            <config-param name="proxyname" value=""/>
+            <config-param name="proxyport" value=""/>
+            <config-param name="proxyusername" value=""/>
+            <config-param name="http.method" value="GET"/>
+            <config-param name="isembedxmlpresent" value="false"/>
+            <config-param name="ignorehttpproxy" value="false"/>
+            <config-param name="responseEncoding" value="UTF-8"/>
+            <config-param name="server.auth.mode" value="basic"/>
+            <config-param name="server.auth.host" value=""/>
+            <config-param name="server.auth.ntlm.domain" value=""/>
+         </service-config>
+         <service-input>
+            <header>
+               <param datatype="string" format="None" formatvalue="" name="Accept" sms-name="" src="" target="" value="application/json"/>
+               <param datatype="string" format="None" formatvalue="" name="Content-Type" sms-name="" src="" target="" value="application/json"/>
+            </header>
+            <param datatype="string" encode="true" name="root" sms-name="" src="" value=""/>
+         </service-input>
+         <service-output>
+            <dataset id="root" src="$">
+               <param datatype="string" format="None" formatvalue="" name="deviceName" sms-name="" src="/deviceName" target=""/>
+               <param datatype="string" format="None" formatvalue="" name="macID" sms-name="" src="/macID" target=""/>
+               <param datatype="string" format="None" formatvalue="" name="deviceID" sms-name="" src="/deviceID" target=""/>
+               <param datatype="string" format="None" formatvalue="" name="deviceLocation" sms-name="" src="/deviceLocation" target=""/>
+               <param datatype="string" format="None" formatvalue="" name="osVersion" sms-name="" src="/osVersion" target=""/>
+               <param datatype="string" format="None" formatvalue="" name="image" sms-name="" src="/image" target=""/>
+            </dataset>
+            <param datatype="number" format="None" formatvalue="" name="opstatus" sms-name="" src="" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="errmsg" sms-name="" src="" target=""/>
+            <param datatype="number" format="None" formatvalue="" name="httpStatusCode" sms-name="" src="" target=""/>
+         </service-output>
+      </service>
+      <service cachable="false" cacheduration="" id="listUser" passwordencrypted="true" smscode="" smsenabled="false" type="jsonConnector">
+         <service-config>
+            <config-param name="endpointUrl" value="http://localhost:3000/user"/>
+            <config-param name="postprocessorname" value=""/>
+            <config-param name="preprocessorname" value=""/>
+            <config-param name="urlprovider" value=""/>
+            <config-param name="dataprovider" value=""/>
+            <config-param name="sockettimeout" value=""/>
+            <config-param name="proxyname" value=""/>
+            <config-param name="proxyport" value=""/>
+            <config-param name="proxyusername" value=""/>
+            <config-param name="http.method" value="GET"/>
+            <config-param name="isembedxmlpresent" value="false"/>
+            <config-param name="ignorehttpproxy" value="false"/>
+            <config-param name="responseEncoding" value="UTF-8"/>
+            <config-param name="server.auth.mode" value="basic"/>
+            <config-param name="server.auth.host" value=""/>
+            <config-param name="server.auth.ntlm.domain" value=""/>
+         </service-config>
+         <service-input>
+            <header>
+               <param datatype="string" format="None" formatvalue="" name="Accept" sms-name="" src="" target="" value="application/json"/>
+               <param datatype="string" format="None" formatvalue="" name="Content-Type" sms-name="" src="" target="" value="application/json"/>
+            </header>
+         </service-input>
+         <service-output>
+            <dataset id="userRoot" src="$">
+               <param datatype="string" format="None" formatvalue="" name="userName" sms-name="" src="/userName" target=""/>
+               <param datatype="string" format="None" formatvalue="" name="emailID" sms-name="" src="/emailID" target=""/>
+               <param datatype="string" format="None" formatvalue="" name="phoneNumber" sms-name="" src="/phoneNumber" target=""/>
+            </dataset>
+            <param datatype="number" format="None" formatvalue="" name="opstatus" sms-name="" src="" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="errmsg" sms-name="" src="" target=""/>
+            <param datatype="number" format="None" formatvalue="" name="httpStatusCode" sms-name="" src="" target=""/>
+         </service-output>
+      </service>
+      <service cachable="false" cacheduration="" id="loginUser" passwordencrypted="false" smscode="" smsenabled="false" type="jsonConnector">
+         <service-config>
+            <config-param name="endpointUrl" value="http://localhost:3000/login"/>
+            <config-param name="postprocessorname" value=""/>
+            <config-param name="preprocessorname" value=""/>
+            <config-param name="urlprovider" value=""/>
+            <config-param name="dataprovider" value=""/>
+            <config-param name="sockettimeout" value=""/>
+            <config-param name="proxyname" value=""/>
+            <config-param name="proxyport" value=""/>
+            <config-param name="proxyusername" value=""/>
+            <config-param name="http.method" value="POST"/>
+            <config-param name="isembedxmlpresent" value="false"/>
+            <config-param name="ignorehttpproxy" value="false"/>
+            <config-param name="responseEncoding" value="UTF-8"/>
+            <config-param name="server.auth.mode" value="basic"/>
+            <config-param name="server.auth.host" value=""/>
+            <config-param name="server.auth.ntlm.domain" value=""/>
+         </service-config>
+         <service-input>
+            <header>
+               <param datatype="string" format="None" formatvalue="" name="Accept" sms-name="" src="" target="" value="application/json"/>
+               <param datatype="string" format="None" formatvalue="" name="Content-Type" sms-name="" src="" target="" value="application/json"/>
+            </header>
+            <template-param name="message" value="{&quot;emailID&quot;: &quot;$emailID&quot;,&quot;password&quot;: &quot;$passwd&quot;}"/>
+            <param datatype="string" encode="true" name="emailID" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="passwd" sms-name="" src="" value=""/>
+         </service-input>
+         <service-output>
+            <param datatype="string" format="None" formatvalue="" name="loginRoot" sms-name="" src="$" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="loginStatus" sms-name="" src="/Result" target=""/>
+            <param datatype="number" format="None" formatvalue="" name="opstatus" sms-name="" src="" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="errmsg" sms-name="" src="" target=""/>
+            <param datatype="number" format="None" formatvalue="" name="httpStatusCode" sms-name="" src="" target=""/>
+         </service-output>
+      </service>
+      <service cachable="false" cacheduration="" id="returnDevice" passwordencrypted="true" smscode="" smsenabled="false" type="jsonConnector">
+         <service-config>
+            <config-param name="endpointUrl" value="http://localhost:3000/userlog/update"/>
+            <config-param name="postprocessorname" value=""/>
+            <config-param name="preprocessorname" value=""/>
+            <config-param name="urlprovider" value=""/>
+            <config-param name="dataprovider" value=""/>
+            <config-param name="sockettimeout" value=""/>
+            <config-param name="proxyname" value=""/>
+            <config-param name="proxyport" value=""/>
+            <config-param name="proxyusername" value=""/>
+            <config-param name="http.method" value="POST"/>
+            <config-param name="isembedxmlpresent" value="false"/>
+            <config-param name="ignorehttpproxy" value="false"/>
+            <config-param name="responseEncoding" value="UTF-8"/>
+            <config-param name="server.auth.mode" value="basic"/>
+            <config-param name="server.auth.host" value=""/>
+            <config-param name="server.auth.ntlm.domain" value=""/>
+         </service-config>
+         <service-input>
+            <header>
+               <param datatype="string" format="None" formatvalue="" name="Accept" sms-name="" src="" target="" value="application/json"/>
+               <param datatype="string" format="None" formatvalue="" name="Content-Type" sms-name="" src="" target="" value="application/json"/>
+            </header>
+            <template-param name="message" value="{  &quot;emailID&quot; : &quot;$emailID&quot;,  &quot;startTime&quot; : &quot;$startTime&quot; }"/>
+            <param datatype="string" encode="true" name="emailID" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="startTime" sms-name="" src="" value=""/>
+         </service-input>
+         <service-output>
+            <param datatype="string" format="None" formatvalue="" name="status" sms-name="" src="/result" target=""/>
+            <param datatype="number" format="None" formatvalue="" name="opstatus" sms-name="" src="" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="errmsg" sms-name="" src="" target=""/>
+            <param datatype="number" format="None" formatvalue="" name="httpStatusCode" sms-name="" src="" target=""/>
+         </service-output>
+      </service>
+      <service cachable="false" cacheduration="" id="userReport" passwordencrypted="true" smscode="" smsenabled="false" type="jsonConnector">
+         <service-config>
+            <config-param name="endpointUrl" value="http://localhost:3000/userlog"/>
+            <config-param name="postprocessorname" value=""/>
+            <config-param name="preprocessorname" value=""/>
+            <config-param name="urlprovider" value=""/>
+            <config-param name="dataprovider" value=""/>
+            <config-param name="sockettimeout" value=""/>
+            <config-param name="proxyname" value=""/>
+            <config-param name="proxyport" value=""/>
+            <config-param name="proxyusername" value=""/>
+            <config-param name="http.method" value="GET"/>
+            <config-param name="isembedxmlpresent" value="false"/>
+            <config-param name="ignorehttpproxy" value="false"/>
+            <config-param name="responseEncoding" value="UTF-8"/>
+            <config-param name="server.auth.mode" value="basic"/>
+            <config-param name="server.auth.host" value=""/>
+            <config-param name="server.auth.ntlm.domain" value=""/>
+         </service-config>
+         <service-input>
+            <header>
+               <param datatype="string" format="None" formatvalue="" name="Accept" sms-name="" src="" target="" value="application/json"/>
+               <param datatype="string" format="None" formatvalue="" name="Content-Type" sms-name="" src="" target="" value="application/json"/>
+            </header>
+         </service-input>
+         <service-output>
+            <dataset id="userReportRoot" src="$">
+               <param datatype="string" format="None" formatvalue="" name="emailID" sms-name="" src="/emailID" target="response"/>
+               <param datatype="string" format="None" formatvalue="" name="macID" sms-name="" src="/macID" target=""/>
+               <param datatype="string" format="None" formatvalue="" name="actualEndTime" sms-name="" src="/actualEndTime" target="response"/>
+               <param datatype="string" format="None" formatvalue="" name="startTime" sms-name="" src="/startTime" target=""/>
+            </dataset>
+            <param datatype="number" format="None" formatvalue="" name="opstatus" sms-name="" src="" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="errmsg" sms-name="" src="" target=""/>
+            <param datatype="number" format="None" formatvalue="" name="httpStatusCode" sms-name="" src="" target=""/>
+         </service-output>
+      </service>
+   </services>
+</application>

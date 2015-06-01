@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application name="DeviceTracker" id="DeviceTracker">
+    <container type="form" id="frmListDevice" displayname="Form">
+        <component type="textbox2" id="txtBoxSearch" displayname="TextBox2"/>
+    </container>
+    <container type="form" id="frmViewDeviceInDetail" displayname="Form"/>
+    <container type="dialog" id="popupRegisterDevice" displayname="Popup">
+        <component type="textbox2" id="txtbxEmailID" displayname="TextBox2"/>
+        <component type="textbox2" id="txtbxPassword" displayname="TextBox2"/>
+    </container>
+    <globalsequences/>
+    <skins/>
+</application>
